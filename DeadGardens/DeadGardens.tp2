@@ -1,0 +1,87 @@
+BACKUP ~DeadGardens/backup~
+AUTHOR ~Glittergear~
+VERSION ~1.0 -jasteys edit~
+
+
+README ~DeadGardens/DeadGardens Readme.txt~ 
+
+
+AUTO_TRA ~DeadGardens/translations/%s~ //The "%s" reads in the chosen language folder via LANGUAGE. Currently there is only one.
+
+
+LANGUAGE ~English~
+         ~english~   
+         ~DeadGardens/translations/english/setup.tra~ //you'd put the mod title in here.
+         ~DeadGardens/translations/english/JournalEntries.tra~
+
+BEGIN ~DeadGardens Installation~
+
+
+ADD_JOURNAL TITLE (@5099) @5100 @5101 @5102 @5103 @5104 @5105 @5106 USING ~DeadGardens/translations/english/JournalEntries.tra~
+
+
+//override area (wanted to delete the spawn points)
+COPY_EXISTING ~ar2602.are~ ~override/ar2602.are~
+
+//spawns
+EXTEND_TOP ~AR2602.bcs~ ~DeadGardens/Scripts/AR2602.baf~ //Tethyr Forest cave
+EXTEND_TOP ~AR0406.bcs~ ~DeadGardens/Scripts/AR0406.baf~ //does CC assassin
+EXTEND_TOP ~AR2000.bcs~ ~DeadGardens/Scripts/AR2000.baf~ //does shadow druid trademeet
+EXTEND_TOP ~AR0902.bcs~ ~DeadGardens/Scripts/AR0902.baf~ //does lathander cleric
+
+//dialogues
+COMPILE ~DeadGardens/Dialogues/d_ggDGMQ.d~ //Archruid dialogue
+COMPILE ~DeadGardens/Dialogues/d_ggDGDD.d~ //Dead Druid dialogue
+COMPILE ~DeadGardens/Dialogues/d_ggDGK1.d~ //Assassin Dialogue
+COMPILE ~DeadGardens/Dialogues/d_ggDGK2.d~ //Shadow druid dialogue
+COMPILE ~DeadGardens/Dialogues/d_ggDGK3.d~ //Cleric dialogue
+
+COMPILE ~DeadGardens/Dialogues/BERNARD.d~
+COMPILE ~DeadGardens/Dialogues/PUGNEY.d~
+COMPILE ~DeadGardens/Dialogues/THUNDERBURP.d~
+
+//creatures
+COPY ~DeadGardens/creatures/GGDGMQG.cre~ ~override/GGDGMQG.cre~ //Archdruid MQG
+	SAY NAME1 ~Archdruid Arianelle~
+	SAY NAME2 ~Archdruid Arianelle~
+
+COPY ~DeadGardens/creatures/GGDGDD.cre~ ~override/GGDGDD.cre~
+	SAY NAME1 ~Archdruid Rianor~
+	SAY NAME2 ~Archdruid Rianor~
+
+COPY ~DeadGardens/creatures/GGDGK01.cre~ ~override/GGDGK01.cre~ //Assassin child
+	SAY NAME1 ~Alliast~
+	SAY NAME2 ~Alliast~
+
+COPY ~DeadGardens/creatures/GGDGK02.cre~ ~override/GGDGK02.cre~ //druid child
+	SAY NAME1 ~Dalomin~
+	SAY NAME2 ~Dalomin~
+
+COPY ~DeadGardens/creatures/GGDGK03.cre~ ~override/GGDGK03.cre~ //cleric child
+	SAY NAME1 ~Ceranan~
+	SAY NAME2 ~Ceranan~
+
+
+
+//items
+
+COPY ~DeadGardens/items/GGDGS0.itm~ ~override/GGDGS0.itm~ 
+     SAY NAME1 ~Quarterstaff~
+     SAY NAME2 ~Staff of the Hungaring Swarm~
+     SAY DESC ~This +2 quarterstaff was made by a Shadow Druid. It vibrates occaisionally and sometimes you hear a buzzing sound eminating from it. The staff is home to a hive of bloodthirsty insects, who would be happy to feast upon your enemies.
+
+STATISTICS
+THAC0 +2
+
+Allows Insect Plague 1x/day
+~
+COPY ~DeadGardens/items/GGDGS2.itm~ ~override/GGDGS2.itm~ 
+     SAY NAME1 ~Quarterstaff~
+     SAY NAME2 ~Staff of the Undead Druid~
+     SAY DESC ~This +2 Staff Mace once belonged to the Archdruid Rianor. Rianor's unlife has influenced this staff, imbuing it with energy from the Fugue Plane.
+
+STATISTICS
+TAC0 +3
+Resist Cold 50%
+Summon Shambling Mound 1x/day
+~

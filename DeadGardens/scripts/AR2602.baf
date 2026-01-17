@@ -1,0 +1,10 @@
+//spawns the undead druid in the cave
+
+IF
+Global("GGDGDDspawner","GLOBAL",0) Global("GGDGMQ","GLOBAL",1)
+THEN
+RESPONSE #100
+CreateCreature("GGDGDD",[651.985],3)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
+SetGlobal("GGDGDDspawner","GLOBAL",1)
+Continue()
+END

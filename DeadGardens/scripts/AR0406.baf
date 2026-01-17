@@ -1,0 +1,10 @@
+//spawns the Asassin Child in the copper coronet
+
+IF
+Global("GGDGK01spawner","GLOBAL",0) Global("GGDGMQ","GLOBAL",2)
+THEN
+RESPONSE #100
+CreateCreature("GGDGK01",[1844.948],3)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
+SetGlobal("GGDGK01spawner","GLOBAL",1)
+Continue()
+END
